@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
@@ -125,22 +125,19 @@ bool dif(ITEM item1, ITEM item2)
 |            pelo parametro arvore, se ha algum outro NO com o mesmo valor
 |            de chave. Se houver, retorna true. Caso contrario, retorna false.
 */
+int vetor[];
 bool haDuplicados(ARVORE_BINARIA *arvore, ARVORE_BINARIA *raiz)
 {
-  if(vazia(arvore))
-	return false;
-  if (!vazia(arvore)){
-	if((!vazia(raiz->esq))){
-		if(dif(raiz->esq->item,raiz->dir->item)){
-			if (haDuplicados(raiz->dir->dir,raiz->esq->esq) && haDuplicados(raiz->dir->dir,raiz->esq->esq) )
-				return false;
-		}
-	}
-  } 
-  return true;
+	vetor[vetor.length] = 
+haDuplicados(arvore,arvore->esq);
+haDuplicados(arvore,arvore->esq->dir);
+haDuplicados(arvore,arvore->dir);
+haDuplicados(arvore,arvore->dir->esq);
+
+
 }
 
-
+ 
 /////////////////////////////////////////////////////
 
 // Mostra na tela uma linha informando se ha valores duplicados na Arvore

@@ -256,12 +256,12 @@ bool itensIguais(ITEM item1, ITEM item2)
            arvores sao exatamente iguais, em conteudo e disposicao.
 */
 bool iguais(ARVORE_BINARIA *arv1, ARVORE_BINARIA *arv2)
-{
- if( vazia(arv1) && vazia(arv2)){
+{  
+if( vazia(arv1) && vazia(arv2)){
 	return true;
  }
  if (!vazia(arv1) && (!vazia(arv2))){ // se nao sao vazias entao verificar se ambos itens sao iguais
-   if(itensIguais(arv1->item,arv2->item)) { //se itens iguais, verificar suas ramicacoes recursivamente
+   if(arv1->item.chave ==arv2->item.chave) { //se itens iguais, verificar suas ramicacoes recursivamente
 	if (iguais(arv1->dir,arv2->dir) && iguais(arv1->esq,arv2->esq))
 		return true; //sao iguais
    }
